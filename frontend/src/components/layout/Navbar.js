@@ -14,7 +14,6 @@ class Navbar extends Component {
 						type="button"
 						data-toggle="collapse"
 						data-target="#mobile-nav"
-						sans-serif
 					>
 						<span className="navbar-toggler-icon" />
 					</button>

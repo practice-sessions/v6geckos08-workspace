@@ -40,12 +40,20 @@ class Register extends Component {
 			password2: this.state.password2
 		};
 
-		this.props.registerClient(newClient, this.props.history);
+	this.props.registerClient(newClient, this.props.history);
 	}
 
 	render() {
 		const { errors } = this.state;
 
+=======
+		axios
+			.post('/api/clients/register', newClient)
+			.then((res) => console.log(res.data))
+			.catch((err) => console.log(err.response.data));
+	}
+
+	render() {
 		return (
 			<div className="register">
 				<div className="container">
