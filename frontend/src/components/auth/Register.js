@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
 
 class Register extends Component {
+	constructor() {
+		super();
+		this.state = {
+			name: '',
+			email: '',
+			password: '',
+			password2: '',
+			errors: {}
+		};
+
+		this.onChange = this.onChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
+	}
+
+	onChange(e) {
+		this.setState({ [e.target.name]: e.target.value });
+	}
+
+	onSubmit(e) {
+		e.preventDefault();
+
+		const newClient = {
+			name: this.state.name,
+			email: this.state.email,
+			password: this.state.password,
+			password2: this.state.password2
+		};
+
+		console.log(newClient);
+	}
+
 	render() {
 		return (
 			<div className="register">
@@ -8,45 +39,53 @@ class Register extends Component {
 					<div className="row">
 						<div className="col-md-8 m-auto">
 							<h1 className="display- text-center">Sign up</h1>
-							<p className="lead-1 text-center"> Register to Create a Profile</p>
-							<form action="signup.html">
+							<p className="lead-1 text-center"> Create your !SocialCoder account</p>
+							<form onSubmit={this.onSubmit}>
 								<div className="form-group">
 									<input
 										type="text"
-										class="form-control-form-control-lg"
+										className="form-control-form-control-lg"
 										placeholder="Name"
 										name="name"
-										required
+										value={this.state.name}
+										onChange={this.onChange}
 									/>{' '}
 								</div>
 								<div className="form-group">
 									<input
 										type="email"
-										class="form-control-form-control-lg"
+										className="form-control-form-control-lg"
 										placeholder="Email Address"
 										name="email"
+										value={this.state.email}
+										onChange={this.onChange}
 									/>
 									<small className="form-text text-muted">
-										This site uses Gravatar so if you want a profile image, use a Gravatar email
+										This site uses Gravatar so if you want an image on your profile, its best to use
+										a Gravatar email
 									</small>
 								</div>
 								<div className="form-group">
 									<input
 										type="password"
-										class="form-control-form-control-lg"
+										className="form-control-form-control-lg"
 										placeholder="Password"
 										name="password"
+										value={this.state.password}
+										onChange={this.onChange}
 									/>
 								</div>
 								<div className="form-group">
 									<input
 										type="password"
-										class="form-control-form-control-lg"
+										className="form-control-form-control-lg"
 										placeholder="Confirm Password"
 										name="password2"
+										value={this.state.password2}
+										onChange={this.onChange}
 									/>
 								</div>
-								<input type="submit" class="btn btn-info btn-block mt-4" />
+								<input type="submit" className="btn btn-info btn-block mt-4" />
 							</form>
 						</div>
 					</div>
