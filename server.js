@@ -8,7 +8,7 @@ const passport = require('passport');
 const clients = require('./routes/api/clients');
 const org = require('./routes/api/org');
 const dev = require('./routes/api/dev');
-const seek = require('./routes/api/seek');
+// const seek = require('./routes/api/seek');
 
 const app = express();
 
@@ -34,7 +34,7 @@ require('./config/passport')(passport);
 
 // Use Routes
 app.use('/api/clients', clients);
-app.use('/api/seek', seek);
+// app.use('/api/seek', seek);
 app.use('/api/org', org);
 app.use('/api/dev', dev);
 
