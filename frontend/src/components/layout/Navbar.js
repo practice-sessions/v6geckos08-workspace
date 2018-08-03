@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Navbar extends Component {
 	render() {
 		return (
-			<nav className="navbar navbar-default navbar-static-top role=navigation">
+			<nav className="navbar navbar-light navbar-static-top role=navigation">
 				<div className="container">
 					<Link className="navbar-brand" to="/register">
 						!SocialCodes
@@ -40,7 +40,7 @@ class Navbar extends Component {
 						<ul className="navbar-nav ml-auto">
 							<li className="nav-item">
 								<Link className="nav-link" to="/register">
-									Sign Up
+									Register
 								</Link>
 							</li>
 							<li className="nav-item">

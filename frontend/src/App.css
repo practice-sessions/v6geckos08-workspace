@@ -37,6 +37,11 @@ img {
 	background: linear-gradient(to top, #243b55, #141e30);
 }
 
+/* NavBar Styles */
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+	color: #007bff;
+}
+
 /* Landing Page Styles */
 .landing-callout {
 	color: white;
